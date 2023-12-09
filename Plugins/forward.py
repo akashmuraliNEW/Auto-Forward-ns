@@ -14,7 +14,7 @@ async def forward(client, message):
       for id in Config.CHANNEL:
          from_channel, to_channel = id.split(":")
          if message.chat.id == int(from_channel):
-           if message.startswith('MUSIC'):
+           if message.text.startswith('MUSIC'):
 #           func = message.copy if False else message.forward
             await message.copy(int(to_channel))
             print("Forwarded a message from", from_channel, "to", to_channel)
